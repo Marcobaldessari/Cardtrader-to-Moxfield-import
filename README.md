@@ -34,6 +34,19 @@ python3 cardtrader_to_moxfield.py
 
 3. The converted CSV file will be saved in `Moxfield CSV/moxfield_import.csv`
 
+## Sample Data
+
+To see examples of the expected input and output formats, check the `sample_data/` directory:
+
+- **Input Example**: `sample_data/sample_cardtrader_order.xls` - Shows the expected Cardtrader XLS format
+- **Output Example**: `sample_data/sample_moxfield_output.csv` - Shows the generated Moxfield CSV format
+
+You can also generate new sample data by running:
+
+```bash
+python3 create_sample_data.py
+```
+
 ## Field Mappings
 
 ### Condition Mapping
@@ -106,3 +119,40 @@ The script provides a summary of the conversion including:
 - Prices are automatically converted from cents to euros with 2 decimal places
 - The "Playtest Card" field is always set to "FALSE" as this information is not available in Cardtrader data
 - All text fields are properly escaped for CSV format
+
+## GitHub Setup
+
+To set up this repository on GitHub:
+
+1. **Quick Setup**: Run the provided setup script:
+
+   ```bash
+   ./setup_git.sh
+   ```
+
+2. **Manual Setup**:
+
+   - Create a new repository on GitHub
+   - Add the remote origin: `git remote add origin <your-github-repo-url>`
+   - Push to GitHub: `git push -u origin main`
+
+3. **Files Included in Repository**:
+
+   - `cardtrader_to_moxfield.py` - Main conversion script
+   - `README.md` - Documentation
+   - `requirements.txt` - Python dependencies
+   - `.gitignore` - Git ignore rules
+   - `setup_git.sh` - Setup helper script
+
+4. **Files Excluded** (via .gitignore):
+   - Python cache files (`__pycache__/`, `*.pyc`)
+   - System files (`.DS_Store`, `Thumbs.db`)
+   - IDE files (`.vscode/`, `.idea/`)
+   - Virtual environments
+   - Log files
+   - **Personal data files** (`Cardtrader xls/*.xls`, `Moxfield CSV/*.csv`)
+
+5. **Sample Data Included**:
+   - `sample_data/sample_cardtrader_order.xls` - Example input format
+   - `sample_data/sample_cardtrader_order.csv` - CSV version for reference
+   - `sample_data/sample_moxfield_output.csv` - Example output format
